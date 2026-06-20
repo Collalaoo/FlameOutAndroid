@@ -1,6 +1,7 @@
 package flame.entities;
 
 import arc.math.geom.*;
+import arc.util.io.*;
 import mindustry.*;
 import mindustry.content.*;
 import mindustry.core.*;
@@ -109,6 +110,11 @@ public class DrawEntity extends BasicEntity implements Drawc{
     @Override
     public float y(){
         return y;
+    }
+
+    @Override
+    public void afterReadAll(){
+
     }
 
     @Override

@@ -337,7 +337,6 @@ public class EmpathyUnit extends UnitEntity{
                 EmpathyUnit u1 = createUnit(o);
                 u1.setType(type);
                 //u1.team = tm[0];
-                u1.ammo = type.ammoCapacity;
                 u1.elevation = 1f;
                 u1.copyFields(this);
                 u1.team = tm[0];
@@ -1188,7 +1187,6 @@ public class EmpathyUnit extends UnitEntity{
         EmpathyUnit u = new EmpathyUnit();
         u.team = team;
         u.setType(type);
-        u.ammo = type.ammoCapacity;
         u.elevation = 1f;
         u.copyFields(this);
         u.decoyDelay = 2f * 60;

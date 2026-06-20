@@ -81,7 +81,7 @@ public class RicochetAttack extends AttackAI{
                     //reload = 2.5f * 60f;
                     reload = 6f * 60f;
 
-                    Sounds.bolt.at(unit.x, unit.y);
+                    Sounds.shockBullet.at(unit.x, unit.y);
                     unit.randAI(true, unit.health < 50);
                 }
             }
@@ -111,6 +111,11 @@ public class RicochetAttack extends AttackAI{
         Seq<BulletData> bullets = new Seq<>();
 
         static Bullet tmpBullet = new MockBullet();
+
+        @Override
+        public void afterReadAll(){
+
+        }
 
         @Override
         public void update(){

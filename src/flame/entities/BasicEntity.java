@@ -40,6 +40,10 @@ public abstract class BasicEntity implements Entityc{
     }
 
     @Override
+    public void beforeWrite(){
+
+    }
+
     public boolean isNull(){
         return false;
     }

@@ -42,8 +42,8 @@ public class ParriedEntity extends BasicEntity implements Poolable{
                 b.rotation(b.angleTo(x, y) + 180);
             }
         });
-        Sounds.largeExplosion.at(x, y, Mathf.random(0.9f, 1.1f), 0.75f);
-        Sounds.pulseBlast.at(x, y, Mathf.random(0.9f, 1.1f));
+        Sounds.explosionDull.at(x, y, Mathf.random(0.9f, 1.1f), 0.75f);
+        Sounds.shockwaveTower.at(x, y, Mathf.random(0.9f, 1.1f));
         size *= 0.9f;
     }
 
@@ -74,6 +74,11 @@ public class ParriedEntity extends BasicEntity implements Poolable{
         pierceLast = -1;
         target = null;
         team = null;
+    }
+
+    @Override
+    public void afterReadAll(){
+
     }
 
     @Override

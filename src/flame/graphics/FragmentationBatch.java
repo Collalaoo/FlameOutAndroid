@@ -20,7 +20,7 @@ public class FragmentationBatch extends Batch{
     public Cons<Fragmentation> fragDataFunc = null;
     public AltFragFunc altFunc = (x, y, tex) -> {};
     public Effect trailEffect, explosionEffect;
-    public Color fragColor = Color.white, goreColor = Pal.darkerMetal;
+    public Color fragColor = Color.white, goreColor = Pal.darkerMetal, color = new Color();
     public boolean useAlt = true, genGore = false;
     public float resScale = 1f, islandScl = 1f;
     public Sound sound = null;
@@ -57,11 +57,9 @@ public class FragmentationBatch extends Batch{
     }
 
 
-    @Override
     protected void setMixColor(Color tint){
 
     }
-    @Override
     protected void setMixColor(float r, float g, float b, float a){
 
     }

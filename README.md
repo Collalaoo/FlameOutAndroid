@@ -1,30 +1,87 @@
-## Not intended for Multiplayer or Mobile
+# Flame Out — Mindustry v8 Mod
 
-## Building for Desktop Testing
+A massive **Flame Out** boss-rush/micro-PvE mod for **Mindustry v8 (build 158.1)**, ported from the original by **eyeofdarkness**.
 
-1. Install JDK **17**.
-2. Run `gradlew jar` [1].
-3. Your mod jar will be in the `build/libs` directory. **Only use this version for testing on desktop. It will not work with Android.**
-To build an Android-compatible version, you need the Android SDK. You can either let Github Actions handle this, or set it up yourself. See steps below.
+Fight brutal multi-phase bosses, dodge screen-filling bullet hells, and tear through waves of corrupted units.
 
-## Building Locally
+---
 
-Building locally takes more time to set up, but shouldn't be a problem if you've done Android development before.
-1. Download the Android SDK, unzip it and set the `ANDROID_HOME` environment variable to its location.
-2. Make sure you have API level 30 installed, as well as any recent version of build tools (e.g. 30.0.1)
-3. Add a build-tools folder to your PATH. For example, if you have `30.0.1` installed, that would be `$ANDROID_HOME/build-tools/30.0.1`.
-4. Run `gradlew deploy`. If you did everything correctlly, this will create a jar file in the `build/libs` directory that can be run on both Android and desktop. 
+## 🧨 Features
 
-## Adding Dependencies
+- **10+ unique bosses** with multiple attack phases
+- **Custom bullet patterns** — lasers, ricochets, sprays, magic orbs
+- **Empathy units** — fight copies of yourself that adapt to your tactics
+- **Despondency** — the final boss with devastating weapons
+- **Custom shaders, particles, and sound effects**
+- **Solo / micro-PvE experience** — not designed for multiplayer
 
-Please note that all dependencies on Mindustry, Arc or its submodules **must be declared as compileOnly in Gradle**. Never use `implementation` for core Mindustry or Arc dependencies. 
+## 🖥️ Building
 
-- `implementation` **places the entire dependency in the jar**, which is, in most mod dependencies, very undesirable. You do not want the entirety of the Mindustry API included with your mod.
-- `compileOnly` means that the dependency is only around at compile time, and not included in the jar.
+### Requirements
+- JDK **17** or later
 
-Only use `implementation` if you want to package another Java library *with your mod*, and that library is not present in Mindustry already.
+### Desktop
+```bash
+./gradlew jar
+```
+Jar → `build/libs/flameoutDesktop.jar`
 
---- 
+### Android + Desktop (full deploy)
+```bash
+export ANDROID_HOME=/path/to/android/sdk
+./gradlew deploy
+```
+Creates `build/libs/flameout.jar` (works on both platforms).
 
-*[1]* *On Linux/Mac it's `./gradlew`, but if you're using Linux I assume you know how to run executables properly anyway.*  
-*[2]: Yes, I know this is stupid. It's a Github UI limitation - while the jar itself is uploaded unzipped, there is currently no way to download it as a single file.*
+## 🎮 How to play
+
+Place the `.jar` in Mindustry's `mods/` folder and enable it in the mod menu.
+Start a new survival game — the bosses begin appearing from wave 1.
+
+## 📜 License / Ліцензія
+
+Apache 2.0 — see [LICENSE](LICENSE).
+
+---
+
+# Flame Out — Мод для Mindustry v8
+
+Огромный **Flame Out** — мод в жанре boss-rush / micro-PvE для **Mindustry v8 (build 158.1)**, портированный с оригинальной версии от **eyeofdarkness**.
+
+Сражайтесь с брутальными многофазными боссами, уворачивайтесь от заполняющих весь экран данмаку-паттернов и прорывайтесь сквозь волны искажённых юнитов.
+
+## 🧨 Особенности
+
+- **10+ уникальных боссов** с несколькими фазами атак
+- **Кастомные пулевые паттерны** — лазеры, рикошеты, спреи, магические сферы
+- **Эмпатические юниты** — сражайтесь с копиями себя, адаптирующимися к вашей тактике
+- **Despondency** — финальный босс с разрушительным вооружением
+- **Собственные шейдеры, частицы и звуки**
+- **Одиночный / micro-PvE опыт** — не рассчитан на мультиплеер
+
+## 🖥️ Сборка
+
+### Требования
+- JDK **17** или новее
+
+### Desktop
+```bash
+./gradlew jar
+```
+Jar → `build/libs/flameoutDesktop.jar`
+
+### Android + Desktop (полная сборка)
+```bash
+export ANDROID_HOME=/path/to/android/sdk
+./gradlew deploy
+```
+Создаёт `build/libs/flameout.jar` (работает на обеих платформах).
+
+## 🎮 Как играть
+
+Поместите `.jar` в папку `mods/` Mindustry и включите его в меню модов.
+Начните новую игру в режиме выживания — боссы начнут появляться с первой волны.
+
+## 📜 Лицензия
+
+Та же, что и у оригинала — см. [LICENSE](LICENSE).

@@ -15,6 +15,7 @@ public class CutBatch extends Batch{
     public Effect explosionEffect;
     public Cons<Severation> cutHandler;
     public Sound sound;
+    public Color color = new Color();
     static Seq<Severation> returnEntities = new Seq<>();
 
     public Seq<Severation> switchBatch(Runnable run){
@@ -35,11 +36,9 @@ public class CutBatch extends Batch{
         return returnEntities;
     }
 
-    @Override
     protected void setMixColor(Color tint){
 
     }
-    @Override
     protected void setMixColor(float r, float g, float b, float a){
 
     }

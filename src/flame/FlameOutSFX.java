@@ -54,8 +54,10 @@ public class FlameOutSFX implements ApplicationListener{
     FloatSeq blackHoleQueue = new FloatSeq();
 
     protected FlameOutSFX(){
-        if(Vars.platform instanceof ApplicationCore core){
-            core.add(this);
+        if(Vars.platform instanceof ApplicationCore){
+            ((ApplicationCore)Vars.platform).add(this);
+        }else{
+            Core.app.addListener(this);
         }
         Events.on(EventType.ResetEvent.class, e -> {
             locks.clear();

@@ -161,7 +161,7 @@ public class BulletHellMove extends FollowStrongest{
         Groups.bullet.intersect(r.x, r.y, r.width, r.height, b -> {
             if(unit.within(b, range + b.hitSize / 2f) && b.team != unit.team){
                 bullets.add(b);
-                hbullets.add(b);
+                hbullets.add((Velc)b);
                 
                 float dst = unit.dst(b);
                 float speed = dst / 14f;
@@ -208,7 +208,7 @@ public class BulletHellMove extends FollowStrongest{
         Groups.unit.intersect(r.x, r.y, r.width, r.height, u -> {
             if(unit.within(u, range + u.hitSize / 2f) && u.team != unit.team && (u.controller() instanceof MissileAI || u instanceof TimedKillUnit)){
                 unitBullets.add(u);
-                hbullets.add(u);
+                hbullets.add((Velc)u);
 
                 float dst = unit.dst(u);
                 float speed = dst / 14f;
