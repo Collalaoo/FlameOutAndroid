@@ -36,8 +36,7 @@ public class SpecialContent{
                 destructible = true;
                 configurable = true;
 
-                buildVisibility = BuildVisibility.hidden;
-                //buildVisibility = BuildVisibility.sandboxOnly;
+                buildVisibility = BuildVisibility.sandboxOnly;
                 category = Category.effect;
 
                 buildType = SpawnerBuilding::new;

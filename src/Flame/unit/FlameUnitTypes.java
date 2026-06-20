@@ -33,6 +33,7 @@ public class FlameUnitTypes{
             
             envEnabled = Env.any;
             envDisabled = 0;
+            alwaysUnlocked = true;
         }};
         apathySentry = new UnitType("apathy-sweep-0"){{
             outlines = false;
@@ -53,6 +54,7 @@ public class FlameUnitTypes{
 
             envEnabled = Env.any;
             envDisabled = 0;
+            alwaysUnlocked = true;
         }};
 
         empathy = new EmpathyUnitType("empathy");
@@ -77,6 +79,8 @@ public class FlameUnitTypes{
             envDisabled = 0;
         }};
 
-        despondency = new DespondencyUnitType("despondency");
+        despondency = new DespondencyUnitType("despondency"){{
+            alwaysUnlocked = true;
+        }};
     }
 }
