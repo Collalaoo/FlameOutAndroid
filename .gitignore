@@ -109,7 +109,6 @@ com_crashlytics_export_strings.xml
 /html/build/
 /ios/build/
 /ios-moe/build/
-!/build/libs/*.jar
 
 /nbbuild/
 /android/nbbuild/
@@ -150,7 +149,6 @@ gradle-app.setting
 /html/build/
 /ios/build/
 /ios-moe/build/
-!/build/libs/*.jar
 
 ## OS Specific
 .DS_Store
