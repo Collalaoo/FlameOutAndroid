@@ -13,6 +13,7 @@ import Flame.special.*;
 import Flame.unit.*;
 import Flame.unit.empathy.*;
 import mindustry.*;
+import mindustry.content.*;
 import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
@@ -91,6 +92,14 @@ public class FlameOut extends Mod{
         FlameBullets.load();
         FlameUnitTypes.load();
         SpecialContent.load();
+
+        Events.on(ContentInitEvent.class, e -> {
+            TechTree.nodeRoot("flame-out", FlameUnitTypes.apathy, () -> {
+                if(FlameUnitTypes.yggdrasil != null) TechTree.node(FlameUnitTypes.yggdrasil);
+                if(FlameUnitTypes.despondency != null) TechTree.node(FlameUnitTypes.despondency);
+                if(SpecialContent.spawner != null) TechTree.node(SpecialContent.spawner);
+            });
+        });
     }
 
 }
