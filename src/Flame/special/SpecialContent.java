@@ -24,37 +24,35 @@ public class SpecialContent{
     public static Block spawner;
 
     public static void load(){
-        if(SpecialMain.main == null) return;
+        spawner = new Block("unitspawn"){{
+            health = 100000;
+            size = 1;
+            breakable = false;
+            solid = false;
 
-        if(SpecialMain.getStage() == 2){
-            spawner = new Block("unitspawn"){{
-                health = 100000;
-                size = 1;
-                breakable = false;
-                solid = false;
+            destructible = true;
+            configurable = true;
 
-                destructible = true;
-                configurable = true;
+            buildVisibility = BuildVisibility.shown;
+            category = Category.effect;
 
-                buildVisibility = BuildVisibility.shown;
-                category = Category.effect;
+            buildType = SpawnerBuilding::new;
+        }
 
-                buildType = SpawnerBuilding::new;
+            @Override
+            public void load(){
+                super.load();
+
+                region = Blocks.switchBlock.region;
             }
 
-                @Override
-                public void load(){
-                    super.load();
+            @Override
+            public boolean canBreak(Tile tile){
+                return false;
+            }
+        };
 
-                    region = Blocks.switchBlock.region;
-                }
-
-                @Override
-                public boolean canBreak(Tile tile){
-                    return false;
-                }
-            };
-        }
+        if(SpecialMain.main == null) return;
 
         if(SpecialMain.getStage() == 0)
         y = new UnitType(""){
